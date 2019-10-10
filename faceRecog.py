@@ -1,4 +1,12 @@
 import face_recognition
+import os
+
+def loadKnownImage(imageName):
+
+
+def loadUnknownImage():
+
+
 
 # Load the jpg files into numpy arrays
 biden_image = face_recognition.load_image_file("Shailesh.jpg")
