@@ -1,22 +1,21 @@
 import face_recognition
 import os
 
+unknown_image = []
+
 def loadKnownImage(imageName):
+	return
 
+def loadUnknownImage(unknownDirecName):
+	for (root,direc,file) in os.walk(unknownDirecName):
+		fileList = file
 
-def loadUnknownImage():
+	for file in fileList:
+		unknown_image.append(face_recognition.load_image_file(file))
 
+	print(len(unknown_image))
 
-
-# Load the jpg files into numpy arrays
-biden_image = face_recognition.load_image_file("Shailesh.jpg")
-obama_image = face_recognition.load_image_file("Shubham.jpg")
-obamaji_image = face_recognition.load_image_file("Shivam.jpg")
-unknown_image = face_recognition.load_image_file("one.jpg")
-
-# Get the face encodings for each face in each image file
-# Since there could be more than one face in each image, it returns a list of encodings.
-# But since I know each image only has one face, I only care about the first encoding in each image, so I grab index 0.
+'''
 try:
 	biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 	obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
@@ -41,3 +40,5 @@ for face in unknown_face_encoding:
 	print("Is the unknown face a picture of Shubham? {}".format(results[1]))
 	print("Is the unknown face a picture of Shivam? {}".format(results[2]))
 	print("Is the unknown face a new person that we've never seen before? {}".format(not True in results))
+
+'''
