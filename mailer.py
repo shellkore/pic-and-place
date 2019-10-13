@@ -20,8 +20,4 @@ def email_data(to_email, from_email, pwd,name,link):
 
     print("Email containing details has been sent to provided email id.")
 
-from_email = "shellsahu@gmail.com"
-to_email = "shaileshkumar2604@gmail.com"
-name = "Shailesh"
-link = "https://drive.google.com/open?id=17dr0_Ig-8Lww9M3BuySk8hr_L3BXw4z4"
 email_data(to_email, from_email, pwd,name,link)

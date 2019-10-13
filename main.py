@@ -2,6 +2,7 @@ import os
 import faceRecog
 from shutil import copy2
 import gdrive
+import mailer
 import json
 
 owd = os.getcwd()
@@ -72,3 +73,8 @@ for person in knownImageList:
 		#print("person Picked",person)
 		print(baseShareURL+allFolders[person],"sent to",mailID[person])
 
+for person in knownImageList:
+	person = person[:-4] #removing ".jpg" from name
+	
+	if(os.path.exists(person)):
+		mailer.email_data(mailID[person], mailID[sender], mailID[pwd],person,allFolders[person])
