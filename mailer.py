@@ -20,4 +20,4 @@ def email_data(to_email, from_email, pwd,name,link):
 
     print("Email containing details has been sent to provided email id.")
 
-email_data(to_email, from_email, pwd,name,link)
+#email_data(to_email, from_email, pwd,name,link)

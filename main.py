@@ -48,7 +48,7 @@ for person in knownImageList:
 	person = person[:-4] #removing ".jpg" from name
 	if(os.path.exists(person)):
 		gdrive.createFolder(person)
-		print(person,"created")
+		print(person,"created in GDrive")
 
 allFolders = gdrive.getFolderDict()
 print(allFolders)
@@ -75,6 +75,6 @@ for person in knownImageList:
 
 for person in knownImageList:
 	person = person[:-4] #removing ".jpg" from name
-	
 	if(os.path.exists(person)):
-		mailer.email_data(mailID[person], mailID[sender], mailID[pwd],person,allFolders[person])
+		linkToShare = baseShareURL+allFolders[person]
+		mailer.email_data(mailID[person], mailID['sender'], mailID['pwd'],person,linkToShare)
