@@ -1,6 +1,7 @@
 import os
 import faceRecog
 from shutil import copy2
+import gdrive
 
 owd = os.getcwd()
 '''
@@ -37,11 +38,25 @@ for i in range(row):
 		if(foundFaceMatrix[i][j]):
 			createAndPlace(unknownImageList[i],knownImageList[j])
 
+print("classfication done, Images getting uploaded in drive")
 
+print(knownImageList)
 
+for person in knownImageList:
+	person = person[:-4] #removing ".jpg" from name
+	if(os.path.exists(person)):
+		gdrive.createFolder(person)
+		print(person,"created")
 
+allFolders = gdrive.getFolderDict()
+print(allFolders)
 
-'''
-for unknownImage in unknownImageList:
+for person in knownImageList:
+	person = person[:-4] #removing ".jpg" from name
+	if(os.path.exists(person)):
+		os.chdir(person)
+		for (root,direc,file) in os.walk("."):
+			imgToUpload = file
 
-'''
+		for img in imgToUpload:
+			gdrive.uploadFile(allFolders[person],img)
