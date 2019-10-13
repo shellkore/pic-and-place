@@ -21,8 +21,6 @@ def createAndPlace(imageName,faceName):
 
 	src_path = os.getcwd()+'/unknown/'+imageName
 	dest_path = os.getcwd()+'/'+folderName+'/'
-	print(src_path)
-	print(dest_path)
 
 	copy2(src_path,dest_path)
 
