@@ -2,12 +2,13 @@ import os
 import faceRecog
 from shutil import copy2
 import gdrive
+import json
 
 owd = os.getcwd()
-'''
-with open('details.json') as json_file:
-		detailDict = json.load(json_file)
-'''
+
+with open('mailID.json') as json_file:
+		mailID = json.load(json_file)
+
 
 knownImageList = faceRecog.loadKnownImage("known")
 
@@ -60,3 +61,14 @@ for person in knownImageList:
 
 		for img in imgToUpload:
 			gdrive.uploadFile(allFolders[person],img)
+		os.chdir("..")
+
+baseShareURL = "https://drive.google.com/open?id="
+
+for person in knownImageList:
+	person = person[:-4] #removing ".jpg" from name
+	
+	if(os.path.exists(person)):
+		#print("person Picked",person)
+		print(baseShareURL+allFolders[person],"sent to",mailID[person])
+

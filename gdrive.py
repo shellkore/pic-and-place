@@ -9,13 +9,6 @@ from pydrive.drive import GoogleDrive
 
 parentID = "1jjWjQkEbKTmj2T6CR2utL7P1VBja-M5A"
 
-def writeInCSV(fileName,string_to_write):
-    firstSplit = string_to_write.split('\n')
-    with open(fileName,'w') as file:
-        for line in firstSplit:
-            file.write(line)
-            file.write('\n')
-
 
 gauth = GoogleAuth()
 # Try to load saved client credentials
@@ -51,6 +44,13 @@ def createFolder(folderName):
     folder = drive.CreateFile(folder_metadata)
     folder.Upload()
 
+    # insert new permission
+    permission = folder.InsertPermission({
+        'type':  'anyone'
+       ,'value': 'anyone'
+       ,'role':  'writer'
+    }) 
+
 def uploadFile(folderID,fileName):
     file = drive.CreateFile({"parents": [{"kind": "drive#fileLink","id": folderID}]})
     file.SetContentFile(fileName)
@@ -64,3 +64,6 @@ def getFolderDict():
       folderDict[file1['title']]=file1['id']
 
     return(folderDict)
+
+#shaileshFolderID = "1M8jEcrKH-MqDXhGdkFuqapTdFEqaayFX"
+#createFolder("shellkore")
