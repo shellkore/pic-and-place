@@ -12,12 +12,28 @@ Application to get your image mailed to you from a event's photographs.
 + The GDrive folder's permission is changed public and a shareable link is created.
 + the shareable link is mailed to the recipient.
 
-## Run
+## How to run
 
+### Collecting user's data
+
++ clone or download the directory
++ Get into the repo `pic-and-place`
++ run flask app
+  `python3 app.py`
++ do SSH tunneling on serveo
+  `ssh -R shellkore:80:localhost:5000 serveo.net`
++ run android app
+
+### Classifying and Mailing Images
+
++ Run main.py
+  `python3 main.py`
 
 
 ## Contributors
 
 Shailesh Kumar Sahu- [shellkore](https://github.com/shellkore)
+
 Shivam Kumar Pathak -[pathakcodes](https://github.com/pathakcodes)
+
 Shubham Singh - [shubham7298](https://github.com/shubham7298)
