@@ -1,6 +1,6 @@
 import smtplib
 import ssl
-
+ 
 # Required for gmail ssl
 port = 465
 

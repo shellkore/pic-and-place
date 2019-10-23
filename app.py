@@ -3,11 +3,11 @@ import base64
 import json
 import os
 
-
+ 
 with open('mailID.json') as json_file:
 		mailID = json.load(json_file)
 
-print(mailID)
+#print(mailID)
 
 app = Flask(__name__)
 
@@ -21,7 +21,8 @@ def dataOfImage():
 	name = request.form['name']
 	email= request.form['email']
 	mailID[name]=email
-	print ("after app:",mailID)
+	print("User Registered")
+	# print ("after app:",mailID)
 	with open('mailID.json','w') as json_file:
 		json.dump(mailID,json_file)
 	imgdata = base64.b64decode(imgstring)
@@ -30,6 +31,7 @@ def dataOfImage():
 	with open(filename, 'wb') as f:
 	 f.write(imgdata)
 	os.chdir("..")
+	return ('Image collected Succesfully')
 	
   	
   

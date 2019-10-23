@@ -1,6 +1,6 @@
 import face_recognition
 import os
-
+ 
 known_faces = []
 known_image_list = []
 
