@@ -12,7 +12,15 @@ Application to get your image mailed to you from a event's photographs.
 + The GDrive folder's permission is changed public and a shareable link is created.
 + the shareable link is mailed to the recipient.
 
+## REQUIREMENTS
+
+install all requirements from requirement.txt
+
+`pip3 install -r requirements.txt`
+
 ## How to run
+
+Make sure you have all the requirements installed mentioned above.
 
 ### Collecting user's data
 
