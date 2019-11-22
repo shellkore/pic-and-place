@@ -1,5 +1,7 @@
 # pic-and-place
-Application to get your image mailed to you from a event's photographs.
+Many times we attends event and got alot of pics clicked in the other side photo album , we mail them to get our pics but hardly we get any, so we are coming up with the solution which will retrieve your selective pics in which your face is visible 
+basically,
+ Its an Application to get your image mailed to you from a event's photographs.
 
 ## Features
 
